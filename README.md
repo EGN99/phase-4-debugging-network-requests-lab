@@ -63,11 +63,30 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+    
+    -Adding a new toy responded with a 500 internal server error
+
+    -Checked the rails server log which showed a NameError(uninitialized constant in create)
+
+    -Corrected the create action. There was a typo Toys instead of Toy
+
 
 - Update the number of likes for a toy
 
   - How I debugged:
 
+    -The browser server showed an error of unexpected end of JSON input
+
+    -The updated toy is not rendered 
+
+    -Added render json: toy, status: :ok 
+
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+
+    -Donating a toy brought up a 404 Error not found
+
+    -added :destroy to routes in resources for toy in config/routes.rb
+
+    
